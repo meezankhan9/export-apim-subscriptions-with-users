@@ -1,40 +1,31 @@
-# Get All Product Subscriptions in Azure API Management (APIM)
+# Azure APIM Product Subscription Export
 
-This PowerShell script retrieves a list of all API Management products and their subscriptions across your Azure APIM instance. It also enriches each subscription with user details (e.g., email, name, user ID) and exports the result to a CSV file.
+![PowerShell](https://img.shields.io/badge/built%20with-PowerShell-012456.svg?logo=powershell&logoColor=white)
+![Azure](https://img.shields.io/badge/Azure-API%20Management-blue?logo=microsoftazure&logoColor=white)
+![License](https://img.shields.io/github/license/meezankhan/azure-apim-product-subscription-export)
+![Last Commit](https://img.shields.io/github/last-commit/meezankhan/azure-apim-product-subscription-export)
+
+🔍 Export detailed Azure API Management product subscriptions along with user metadata to a CSV file — ideal for auditing, governance, and user access analysis.
+
+---
 
 ## 📌 Features
 
-- Fetches all APIM products in a specified instance
-- Lists all subscriptions under each product
-- Extracts user details tied to each subscription
-- Outputs a clean CSV with:
-  - Product ID
-  - Subscription ID & Name
-  - State
-  - User info
-  - Created date
+- Fetches all products from an Azure API Management (APIM) instance
+- Lists subscriptions under each product
+- Retrieves user details: name, email, ID
+- Outputs a clean, timestamped `.csv` report
 
-## 🧠 Use Case
+---
 
-Ideal for platform engineers and governance teams managing Azure API Management. Helps with:
+## ⚙️ Configuration
 
-- Auditing subscriptions
-- Analyzing user access
-- Validating governance rules (e.g., product visibility, subscription hygiene)
-
-## 🚀 How to Use
-
-1. Clone this repository or download the `.ps1` file.
-2. Fill in the required configuration section in the script:
-   - Azure `tenantId`
-   - Azure App Registration `clientId` and `clientSecret`
-   - Azure subscription ID
-   - APIM resource group and service name
+In the script, update the following:
 
 ```powershell
-$tenantId     = "<your-tenant-id>"
-$appId        = "<your-client-id>"
-$clientSecret = "<your-client-secret>"
-$subscriptionId = "<your-subscription-id>"
-$resourceGroupName = "<your-resource-group>"
-$apimServiceName = "<your-apim-name>"
+$tenantId           = "<your-tenant-id>"
+$appId              = "<your-client-id>"
+$clientSecret       = "<your-client-secret>"
+$subscriptionId     = "<your-azure-subscription-id>"
+$resourceGroupName  = "<your-resource-group>"
+$apimServiceName    = "<your-apim-instance-name>"
